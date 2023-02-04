@@ -1,0 +1,48 @@
+ALGORITHM checkpoint
+VAR
+    tab :ARRAY_OF INTEGER[];
+    arr :ARRAY_OF INTEGER[];
+    i:INTEGER :=0
+    j:INTEGER :=0
+    test :BOOLEAN := false
+    sumdis: INTEGER :=0 
+    sum:INTEGER:=0   
+BEGIN
+    FOR i FROM 0 TO tab.length-1 STEP 1  DO
+        test :=  false
+        FOR j FROM 0 TO arr.length STEP 1  DO
+           IF (tab[i]=arr[j]) THEN
+           test := true;
+         END_IF
+        END_FOR
+    IF (test = false) THEN
+       sumdis := tab[i]  
+    END_IF
+    END_FOR
+    FOR i FROM 0 TO arr.length-1 STEP 1  DO
+        test :=  false
+        FOR j FROM 0 TO tab.length STEP 1  DO
+           IF (arr[i]=tab[j]) THEN
+           test := true;
+         END_IF
+        END_FOR
+    IF (test = false) THEN
+       sumdis := arr[i]  
+    END_IF
+    END_FOR
+
+Write (sumdis)
+FOR i FROM 0 TO tab.length-1 STEP 1  DO
+        test :=  false
+        FOR j FROM 0 TO arr.length STEP 1  DO
+           IF (tab[i]=arr[j]) THEN
+           test := true;
+         END_IF
+        END_FOR
+    IF (test = true) THEN
+       sum := tab[i]  
+    END_IF
+    END_FOR
+    Write (sum*2)
+   
+END
